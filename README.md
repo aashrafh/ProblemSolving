@@ -8,4 +8,5 @@ What is this sheet?
 - Covering all topics needed up to codeforces Div2-D
 - Speed problems to maintain speed goals
 
+Sheet: https://goo.gl/unDETI
 Author of the sheet: https://github.com/mostafa-saad
