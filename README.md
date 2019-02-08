@@ -1,4 +1,4 @@
-# JProblem-Solving-Training
+# Problem-Solving-Training
 My solutions to Mostafa Saad's sheet to train and improve problem solving skill and learning Algorithms.
 
 What is this sheet?
