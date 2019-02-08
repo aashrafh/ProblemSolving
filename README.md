@@ -3,7 +3,7 @@ My solutions to Mostafa Saad's sheet to train and improve problem solving skill 
 
 What is this sheet?
 - To be a strong contestant, one has to take care of a number of quality and quantitiy factors.
-   ==> This roadmap does its best to satisfy that.
+   * This roadmap does its best to satisfy that.
 - Complete and consistent roadmap : What to solve & algorithms to learn in order.
 - Covering all topics needed up to codeforces Div2-D.
 - Speed problems to maintain speed goals.
