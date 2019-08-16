@@ -12,7 +12,6 @@
 #include <cstdio>
 #include <stdio.h>
 #include <string.h>
-#include<bits/stdc++.h>
 #define Endl "\n"
 #define LL long long
 #define F first
@@ -25,17 +24,26 @@ int dy[] = { 1, -1, 0, 0, -1, 1, 1, -1 };
 //Knight Moves
 //int dx[] = { -1, -2, -2, -1, 1, 2, 2, 1 };
 //int dy[] = { -2, -1, 1, 2, -2, -1, 1, 2 };
+LL power(LL x, unsigned LL y, LL p)
+{
+    LL res = 1;
+    x = x % p;
+    while (y > 0)
+    {
+        if (y & 1)
+            res = (res*x) % p;
+        y = y>>1;
+        x = (x*x) % p;
+    }
+    return res;
+}
 int main()
 {
   init();
-  double cows, cars, shows;
-  while(cin>>cows>>cars>>shows)
-  {
-    double c1 = (cows/(cows+cars))*(cars/(cows+cars-shows-1));
-    double c2 = (cars/(cows+cars))*((cars-1)/(cows+cars-shows-1));
-    double ans = c1 + c2;
-    cout<<setprecision(5)<<fixed<<ans<<Endl;
-  }
+  LL n;
+  cin>>n;
+  LL exp = power(3, n, 1000000007);
+  cout<<power(3, exp, 1000000007)<<Endl;
   //system("PAUSE");
   return 0;
 }

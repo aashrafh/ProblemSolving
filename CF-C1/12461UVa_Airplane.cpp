@@ -12,7 +12,6 @@
 #include <cstdio>
 #include <stdio.h>
 #include <string.h>
-#include<bits/stdc++.h>
 #define Endl "\n"
 #define LL long long
 #define F first
@@ -28,14 +27,12 @@ int dy[] = { 1, -1, 0, 0, -1, 1, 1, -1 };
 int main()
 {
   init();
-  double cows, cars, shows;
-  while(cin>>cows>>cars>>shows)
-  {
-    double c1 = (cows/(cows+cars))*(cars/(cows+cars-shows-1));
-    double c2 = (cars/(cows+cars))*((cars-1)/(cows+cars-shows-1));
-    double ans = c1 + c2;
-    cout<<setprecision(5)<<fixed<<ans<<Endl;
-  }
   //system("PAUSE");
+  int n;
+  while(cin>>n)
+  {
+    if(!n) break;
+    cout<<"1/2\n";
+  }
   return 0;
 }

@@ -12,7 +12,6 @@
 #include <cstdio>
 #include <stdio.h>
 #include <string.h>
-#include<bits/stdc++.h>
 #define Endl "\n"
 #define LL long long
 #define F first
@@ -25,17 +24,31 @@ int dy[] = { 1, -1, 0, 0, -1, 1, 1, -1 };
 //Knight Moves
 //int dx[] = { -1, -2, -2, -1, 1, 2, 2, 1 };
 //int dy[] = { -2, -1, 1, 2, -2, -1, 1, 2 };
+int val[600], edg[600][600];
 int main()
 {
   init();
-  double cows, cars, shows;
-  while(cin>>cows>>cars>>shows)
+  int n, m;
+  cin>>n>>m;
+  for(int i=1; i<=n; ++i) cin>>val[i];
+  for(int i=1; i<=m; ++i)
   {
-    double c1 = (cows/(cows+cars))*(cars/(cows+cars-shows-1));
-    double c2 = (cars/(cows+cars))*((cars-1)/(cows+cars-shows-1));
-    double ans = c1 + c2;
-    cout<<setprecision(5)<<fixed<<ans<<Endl;
+    int x, y, c;
+    cin>>x>>y>>c;
+    edg[x][y] = c;
   }
+  double ans = 0.0;
+  for(int i=1; i<=n; ++i)
+  {
+    for(int j=1; j<=n; ++j)
+    {
+      if(edg[i][j])
+      {
+        ans = max(ans, 1.0*(val[i]+val[j])/edg[i][j]);
+      }
+    }
+  }
+  printf("%.15f\n", ans);
   //system("PAUSE");
   return 0;
 }

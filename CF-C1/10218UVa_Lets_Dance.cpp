@@ -25,16 +25,35 @@ int dy[] = { 1, -1, 0, 0, -1, 1, 1, -1 };
 //Knight Moves
 //int dx[] = { -1, -2, -2, -1, 1, 2, 2, 1 };
 //int dy[] = { -2, -1, 1, 2, -2, -1, 1, 2 };
+long double comp[105][105];
+void PLAY()
+{
+  for(int i=0; i<=105; ++i)
+  {
+    comp[i][0] = 1;
+  }
+  for(int i=1; i<=105; ++i)
+  {
+    for(int j=1; j<=i; ++j) comp[i][j] = comp[i-1][j] + comp[i-1][j-1];
+  }
+}
 int main()
 {
   init();
-  double cows, cars, shows;
-  while(cin>>cows>>cars>>shows)
+  PLAY();
+  int m, w, c;
+  while(true)
   {
-    double c1 = (cows/(cows+cars))*(cars/(cows+cars-shows-1));
-    double c2 = (cars/(cows+cars))*((cars-1)/(cows+cars-shows-1));
-    double ans = c1 + c2;
-    cout<<setprecision(5)<<fixed<<ans<<Endl;
+    scanf("%d %d %d", &m, &w, &c);
+    if(m==0 && w==0) break;
+    double pw = (1.0*w)/(w+m+0.0);
+    double pm = 1-pm;
+    double ans = 0.0;
+    for(int i=0; i<=c; i+=2)
+    {
+      ans += comp[c][i]*pow(pm, i)*pow(pw, c-i);
+    }
+    cout<<setprecision(7)<<fixed<<ans<<Endl;
   }
   //system("PAUSE");
   return 0;

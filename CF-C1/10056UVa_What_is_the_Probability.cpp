@@ -28,14 +28,23 @@ int dy[] = { 1, -1, 0, 0, -1, 1, 1, -1 };
 int main()
 {
   init();
-  double cows, cars, shows;
-  while(cin>>cows>>cars>>shows)
-  {
-    double c1 = (cows/(cows+cars))*(cars/(cows+cars-shows-1));
-    double c2 = (cars/(cows+cars))*((cars-1)/(cows+cars-shows-1));
-    double ans = c1 + c2;
-    cout<<setprecision(5)<<fixed<<ans<<Endl;
-  }
+  int c, n, m;
+  	double p;
+  	cin >> c;
+  	for (; c; c--) {
+  		cin >> n >> p >> m;
+  		int i = 1;
+  		double common_fact = p * pow(1 - p, m - 1);
+  		double previous = common_fact;
+  		double current = previous + common_fact * pow(1 - p, n);
+  		while (current - previous > 0.0000001) {
+  			i++;
+  			previous = current;
+  			current = previous + common_fact * pow(1 - p, i * n);
+
+  		}
+  		printf("%.4f\n", current);
+  	}
   //system("PAUSE");
   return 0;
 }
