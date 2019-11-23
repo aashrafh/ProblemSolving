@@ -1,5 +1,5 @@
 # Problem Solving Training
-My solutions to Mostafa Saad's sheet to train and improve problem solving skill and learning Algorithms.
+My solutions to Mostafa Saad's sheet and some external peroblems to train and improve problem solving skill and learning Algorithms.
 
 What is this sheet?
 - To be a strong contestant, one has to take care of a number of quality and quantitiy factors.
